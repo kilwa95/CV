@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <!-- Nous utilisons un bundler pour préprocesser le Sass en CSS qui s'appelle Parcel.
+			Le script et cet import ne sont donc utilies que sur l'éditeur en ligne. -->
+    <script src="index.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -8,13 +11,27 @@
       href="https://fonts.googleapis.com/css?family=Muli:300,400,700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/style.css" />
     <script
-      src="https://kit.fontawesome.com/97bb762bba.js"
+      src="https://kit.fontawesome.com/83f4286022.js"
       crossorigin="anonymous"
     ></script>
     <title>Projet CV</title>
   </head>
   <body>
-    Test
+    <div class="grid-container">
+      <header>
+        <h1>Erwan Vallée</h1>
+        <p>Intégrateur HTML & CSS</p>
+      </header>
+      <section class="picture">
+        <img
+          src="https://dyma-images.s3.fr-par.scw.cloud/html-css/projects/project4/erwan.jpg"
+          alt="photo"
+        />
+      </section>
+      <aside></aside>
+      <main></main>
+    </div>
   </body>
 </html>
