@@ -1,8 +1,11 @@
 @use  "base" as *;
 @use  "reset" as *;
 @use  "classes" as *;
-@use  "variables" as *;
+@use  "utils" as *;
 @use  "animations" as *;
+@use  "media_queries" as *;
+@use  "variables" as *;
+
 .grid-container {
   display: grid;
   min-height: 100vh;
@@ -11,6 +14,15 @@
     "aside main" 1fr
     "footer footer" auto
     / 350px auto;
+  @include xs {
+    grid:
+      "header" auto
+      "main" auto
+      "picture" auto
+      "aside" auto
+      "footer" auto
+      / auto;
+  }
 }
 
 header {
@@ -23,11 +35,17 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include xs {
+    padding: 5rem 2rem;
+  }
   h1 {
     font-size: 6rem;
     line-height: 8rem;
     font-weight: 300;
     letter-spacing: 3rem;
+    @include xs {
+      font-size: 4rem;
+    }
   }
   p {
     letter-spacing: 0.5rem;
@@ -123,9 +141,13 @@ aside {
     }
   }
 }
+
 main {
   grid-area: main;
   padding: 5rem;
+  @include xs {
+    padding: 5rem 1.5rem;
+  }
   h2 {
     margin-bottom: 4rem;
   }
@@ -161,6 +183,7 @@ main {
     }
   }
 }
+
 footer {
   grid-area: footer;
   display: flex;
@@ -171,6 +194,9 @@ footer {
   color: white;
   padding: 5rem;
   background: var(--text);
+  @include xs {
+    padding: 5rem 1.5rem;
+  }
   h2 {
     margin-bottom: 3rem;
   }
@@ -206,6 +232,9 @@ footer {
       min-width: 400px;
       padding: 1rem 2rem;
       line-height: 2rem;
+      @include xs {
+        min-width: 200px;
+      }
       &::placeholder {
         color: var(--text);
       }
